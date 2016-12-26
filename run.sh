@@ -1,13 +1,11 @@
 #!/bin/bash
 
-GROUP="${1}"
+GROUP=""
 
-if [[ ! -e "./inventory/${GROUP}" ]]; then
-  echo "./inventory/${GROUP} not found"
-  exit 1
-fi
+[[ "$1" ]] && \
+  GROUP="-l $1"
 
 ansible-playbook -vvv \
   --ask-vault-pass\
-  -i ./inventory/${GROUP}\
+  -i ./inventory/ ${GROUP}\
   ./site.yml
