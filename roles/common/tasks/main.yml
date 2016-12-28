@@ -1,3 +1,4 @@
 ---
 - include: ssh-key.yml
 - include: mc.yml
+- include: screenrc.yml
