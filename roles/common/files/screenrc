@@ -30,14 +30,14 @@ bind 0 select 10
 bind s split
 
 # navigating regions with Ctrl-arrows
-bindkey "^[[1;5D" focus left
-bindkey "^[[1;5C" focus right
-bindkey "^[[1;5A" focus up
-bindkey "^[[1;5B" focus down
+#bindkey "^[[1;5D" focus left
+#bindkey "^[[1;5C" focus right
+#bindkey "^[[1;5A" focus up
+#bindkey "^[[1;5B" focus down
 
 # switch layouts with Ctrl+F3 (prev layout) and Ctrl+F4 (next)
-bindkey "^[," prev
-bindkey "^[." next
+#bindkey "^[," prev
+#bindkey "^[." next
 
 # initiate first console, needed for numbering to start with 1
 screen -t bash 1 bash
