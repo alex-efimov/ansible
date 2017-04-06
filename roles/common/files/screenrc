@@ -2,6 +2,9 @@
 hardstatus alwayslastline
 hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%Y-%m-%d %{W}%c%{g}]'
 
+# SSH agent froward
+setenv SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+
 # huge scrollback buffer
 defscrollback 5000
 
