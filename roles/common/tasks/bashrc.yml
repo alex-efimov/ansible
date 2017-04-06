@@ -1,0 +1,7 @@
+---
+- name: bashrc
+  copy:
+    src: "{{ role_path }}/files/bashrc.sh"
+    dest: "{{ ansible_user_dir }}/.bashrc"
+    force: yes
+    
