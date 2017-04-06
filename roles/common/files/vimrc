@@ -1,3 +1,6 @@
+"------------------------------------------------------------
+" Behavior and colors {{{1
+"
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 "set nocompatible
@@ -9,7 +12,11 @@ filetype indent plugin on
  
 " Enable syntax highlighting
 syntax on
- 
+
+set foldenable
+set foldlevelstart=99
+nnoremap <space> za
+set foldmethod=syntax
  
 "------------------------------------------------------------
 " Must have options {{{1
@@ -118,6 +125,10 @@ set lazyredraw
 
 " show matching brackets
 set showmatch
+
+" incremental search, highlight
+set incsearch
+set hlsearch
  
 "------------------------------------------------------------
 " Indentation options {{{1
