@@ -39,3 +39,5 @@ bindkey "^[[1;5B" focus down
 bindkey "^[," prev
 bindkey "^[." next
 
+# initiate first console, needed for numbering to start with 1
+screen -t bash 1 bash
