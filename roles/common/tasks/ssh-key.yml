@@ -1,5 +1,0 @@
----
-- name: ssh auth key
-  authorized_key:
-    user: aefimov
-    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"

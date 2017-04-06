@@ -1,6 +1,0 @@
----
-- name: screenrc
-  copy:
-    src: "{{ role_path }}/files/screenrc"
-    dest: "{{ ansible_user_dir }}/.screenrc"
-    force: yes
