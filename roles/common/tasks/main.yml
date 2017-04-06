@@ -16,6 +16,7 @@
     src: "{{ role_path }}/files/ssh.rc.sh"
     dest: "{{ ansible_user_dir }}/.ssh/rc"
     force: yes
+    mode: 0700
 
 # MC config
 - name: mc config directory
