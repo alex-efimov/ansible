@@ -1,4 +1,40 @@
 ---
+### System-wide
+- name: yum install
+  become: yes
+  become_user: root
+  when: ansible_os_family == "RedHat"
+  yum: name={{ item }} state=installed
+  with_items:
+    - mc
+    - screen
+    - tmux
+  tags:
+    - system
+- name: apt install
+  become: yes
+  become_user: root
+  apt: name={{ item }} state=installed
+  when: ansible_os_family == "Debian"
+  with_items:
+    - mc
+    - screen
+    - tmux
+  tags:
+    - system
+
+- name: enable key-based ssh auth
+  become: yes
+  become_user: root
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: ^\#PasswordAuthentication
+    line: PasswordAuthentication yes
+  notify:
+    restart ssh
+  tags:
+    - system
+
 # Bashrc
 - name: bashrc
   copy:
@@ -21,13 +57,13 @@
 # MC config
 - name: mc config directory
   file:
-    path: "{{ ansible_user_dir }}/.mc"
+    path: "{{ ansible_user_dir }}/.config/mc"
     state: directory
     mode: 0755
 - name: configure midnight commander
   copy:
     src: "{{ role_path }}/files/mc.ini"
-    dest: "{{ ansible_user_dir }}/.mc/ini"
+    dest: "{{ ansible_user_dir }}/.config/mc/ini"
     force: yes
 
 # Screen
